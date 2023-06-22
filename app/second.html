@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Course Allocation</title>
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
+    <script src="js/script.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Course Allocation</h1>
+    </header>
+
+    <main>
+        <form id="allocationForm" onsubmit="allocateCourse(event)">
+            <h2>Allocate Course Section</h2>
+            <label for="courseCode">Course Code:</label>
+            <input type="text" id="courseCode" name="courseCode">
+            <label for="section">Section:</label>
+            <input type="number" id="section" name="section">
+            <label for="facultyID">Faculty ID:</label>
+            <input type="number" id="facultyID" name="facultyID">
+            <button type="submit">Allocate</button>
+        </form>
+
+        <div id="reports">
+            <h2>Reports</h2>
+            <button onclick="generateFacultyWiseReport()">Faculty-wise Routine</button>
+            <button onclick="generateCourseWiseReport()">Course-wise Routine</button>
+            <button onclick="generateRoomWiseReport()">Room-wise Routine</button>
+        </div>
+
+        <table id="facultyRoutine">
+            <caption>Faculty-wise Routine</caption>
+            <thead>
+                <tr>
+                    <th>Faculty ID</th>
+                    <th>Faculty Name</th>
+                    <th>Course Code</th>
+                    <th>Course Name</th>
+                    <th>Section</th>
+                    <th>Day</th>
+                    <th>Start Time</th>
+                    <th>End Time</th>
+                    <th>Room</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Faculty-wise routine will be dynamically populated here -->
+            </tbody>
+        </table>
+
+        <table id="courseRoutine">
+            <caption>Course-wise Routine</caption>
+            <thead>
+                <tr>
+                    <th>Course Code</th>
+                    <th>Section</th>
+                    <th>Instructor</th>
+                    <th>Day</th>
+                    <th>Start Time</th>
+                    <th>End Time</th>
+                    <th>Room</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Course-wise routine will be dynamically populated here -->
+            </tbody>
+        </table>
+
+        <table id="roomRoutine">
+            <caption>Room-wise Routine</caption>
+            <thead>
+                <tr>
+                    <th>Room</th>
+                    <th>Day</th>
+                    <th>Start Time</th>
+                    <th>End Time</th>
+                    <th>Course Code</th>
+                    <th>Section</th>
+                    <th>Instructor</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Room-wise routine will be dynamically populated here -->
+            </tbody>
+        </table>
+    </main>
+
+    <footer>
+        <p>&copy; 2023 Course Allocation</p>
+    </footer>
+</body>
+</html>
